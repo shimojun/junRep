@@ -9,14 +9,15 @@
     <ul>
       <% @comments.each do |comment| %>
       <li data-id="<%= comment.id %>">
-        <%= h comment.body %>
+        <%= h comment.username %> :: <%= h comment.body %>
         <span class="deleteCmd" style="cursor:pointre;color:blue">[x]</span>
       </li>
       <% end %>
     </ul>
     <h2>Add New</h2>
     <form method="post" action="/new">
-      <input type="text" name="body"> <input type="submit" value="post!">
+      UserName:<input type="text" name="username"><br>
+      Comments:<input type="text" name="body"> <input type="submit" value="post!">
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>

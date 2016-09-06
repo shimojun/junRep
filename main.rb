@@ -21,7 +21,7 @@ get '/' do
 end
 
 post '/new' do
-  Comment.create({:body => params[:body]})
+  Comment.create(:body => params[:body],:username => params[:username])
   redirect '/'
 end
 
